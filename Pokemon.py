@@ -28,7 +28,7 @@ print('The opponent gets {} with ID number {}'.format(opponent_pokemon['name'], 
 my_stat = my_pokemon[stat_choice]
 opponent_stat = opponent_pokemon[stat_choice]
 
-print('Your pokemon has {} of {} your opponent pokemon has {} of his {}'.format(my_pokemon[stat_choice], stat_choice, opponent_pokemon[stat_choice], stat_choice))
+print('Your pokemon has {} of {} your opponent pokemon has {}.'.format(my_pokemon[stat_choice], stat_choice, opponent_pokemon[stat_choice]))
       
 #6. Compare the player's and opponent's Pokemon on the chosen stat to decide who wins
 if my_stat > opponent_stat:
