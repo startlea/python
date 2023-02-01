@@ -3,7 +3,7 @@ import requests
 #
 #
 # Task 1 - Generate a random number between 1 and 151 to use as the Pokemon ID number
-def choose_pokemon():
+def choose_pokemon(amount = 1):
     pokemon_number = random.randint(1,151)
 #3. Create a dictionary that contains the returned Pokemon's name, id, height and weight
     url = 'https://pokeapi.co/api/v2/pokemon/{}/'.format(pokemon_number)  # API URL
@@ -14,14 +14,15 @@ def choose_pokemon():
         'id': pokemon['id'],
         'height': pokemon['height'],
         'weight': pokemon['weight'],
+        'base_experience': pokemon['base_experience']
         }
     
 #2. Using the Pokemon API get a Pokemon based on its ID number
-my_pokemon = choose_pokemon()
+my_pokemon = choose_pokemon(3)
 #4. Get a random Pokemon for the player and another for their opponent
 print('You get {} with ID number {}'.format(my_pokemon['name'], my_pokemon['id']))
 
-stat_choice = input('Which stat of your pokemon do you want to use? (id, height, weight) ')   ##5. Ask the user which stat they want to use (id, height or weight)
+stat_choice = input('Which stat of your pokemon do you want to use? (id, height, weight, base_experience) ')   ##5. Ask the user which stat they want to use (id, height or weight)
 opponent_pokemon = choose_pokemon()
 
 print('The opponent gets {} with ID number {}'.format(opponent_pokemon['name'], opponent_pokemon['id']))
