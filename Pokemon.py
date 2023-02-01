@@ -14,7 +14,7 @@ def choose_pokemon(amount = 1):
         'id': pokemon['id'],
         'height': pokemon['height'],
         'weight': pokemon['weight'],
-        'base_experience': pokemon['base_experience']
+        'exp': pokemon['base_experience']
         }
     
 #2. Using the Pokemon API get a Pokemon based on its ID number
@@ -22,7 +22,7 @@ my_pokemon = choose_pokemon(3)
 #4. Get a random Pokemon for the player and another for their opponent
 print('You get {} with ID number {}'.format(my_pokemon['name'], my_pokemon['id']))
 
-stat_choice = input('Which stat of your pokemon do you want to use? (id, height, weight, base_experience) ')   ##5. Ask the user which stat they want to use (id, height or weight)
+stat_choice = input('Which stat of your pokemon do you want to use? (id, height, weight, exp) ')   ##5. Ask the user which stat they want to use (id, height or weight)
 opponent_pokemon = choose_pokemon()
 
 print('The opponent gets {} with ID number {}'.format(opponent_pokemon['name'], opponent_pokemon['id']))
