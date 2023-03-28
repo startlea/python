@@ -14,30 +14,29 @@ def operator(operator):
         result = n1 / n2
         print(round(result, 2))
     else:
-        print("This is not valid option.")
-        return operator
-    
+        print("Your operation pick is not valid.\n")
+        return False
+    return True
 
-def repeat():
-    repeat = input("Do you want to repeat?[yes/no] ")
-    if repeat == "yes":
-        operator(input("""What do you want to do?[pick a number] 
+
+def calculate():
+    is_operator_ok = False
+    while not is_operator_ok:
+        is_operator_ok = operator(input("""What do you want to do? [pick a number] 
         1. Sum
         2. Subtraction
         3. Multiply
-        4. Devide
+        4. Divide
         Your pick : """))
-    elif repeat == "no":
-        print("Thank you and see you another time.")  
-    else:
-        print("Check your answer")
-        return repeat
-  
-print("""What do you want to do?[pick a number] 
-    1. Sum
-    2. Subtraction
-    3. Multiply
-    4. Devide""")
-operator(input("Your pick : "))
 
-repeat()
+
+def ask():
+    repeat = "yes"
+    while repeat == "yes" or repeat == "Yes":
+        calculate()
+        repeat = input("Do you want to repeat? [yes/no] ")
+
+    
+ask()
+print("\nThank you and see you another time.")  
+print("bye, bye...\n") 
