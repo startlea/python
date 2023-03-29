@@ -1,4 +1,5 @@
-def operator(operator):
+#Calculate
+def calculate(operator):
     n1 = float(input("Give first number: "))
     n2 = float(input("Give second number: "))
     if operator == "1":
@@ -18,22 +19,22 @@ def operator(operator):
         return False
     return True
 
-
-def calculate():
+#Choose operator
+def operator():
     is_operator_ok = False
     while not is_operator_ok:
-        is_operator_ok = operator(input("""What do you want to do? [pick a number] 
+        is_operator_ok = calculate(input("""What do you want to do? [pick a number] 
         1. Sum
         2. Subtraction
         3. Multiply
         4. Divide
         Your pick : """))
 
-
+#Does the user want to repeat or no
 def ask():
     repeat = "yes"
     while repeat == "yes" or repeat == "Yes":
-        calculate()
+        operator()
         repeat = input("Do you want to repeat? [yes/no] ")
 
     
