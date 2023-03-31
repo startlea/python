@@ -12,13 +12,16 @@ def choose_pokemon(amount=1):
         pokemon_number = random.randint(1, 151)
         # 3. Create a dictionary that contains the returned Pokemon's name, id, height and weight
         # API URL
-        url = 'https://pokeapi.co/api/v2/pokemon/{}/' .format(
-            pokemon_number)
+        url = 'https://pokeapi.co/api/v2/pokemon/{}/'.format(pokemon_number)
         response = requests.get(url)  # getting information from the API
         # returns a JSON object of the result (if the result was written in JSON format, if not it raises an error
         pokemon = response.json()
         pokemon_list.append({
-            'name': pokemon['name'], 'id': pokemon['id'], 'height': pokemon['height'], 'weight': pokemon['weight'], 'exp': pokemon['base_experience']})
+            'name': pokemon['name'],
+            'id': pokemon['id'],
+            'height': pokemon['height'],
+            'weight': pokemon['weight'],
+            'exp': pokemon['base_experience']})
 
     return pokemon_list
 
@@ -28,8 +31,8 @@ def choose_pokemon(amount=1):
 def display_pokemon_list(pokemon_list):
     pokemon_number = 1
     for pokemon in pokemon_list:
-        print(
-            f'{pokemon_number}. Pokemon name {pokemon["name"]}, id {pokemon["id"]}, height {pokemon["height"]}, weight {pokemon["weight"]}, experience {pokemon["exp"]}')
+        print('{}. Pokemon name {}, id {}, height {}, weight {}, experience {}'.format(
+            pokemon_number, pokemon['name'], pokemon['id'], pokemon['height'], pokemon['weight'], pokemon['exp']))
         pokemon_number += 1
 
 # Pick a pokemon number/ which pokemon you choose
