@@ -4,6 +4,8 @@ import requests
 #
 # Task 1 - Generate a random number between 1 and 151 to use as the Pokemon ID number
 
+while True:
+
 
 def choose_pokemon(amount=1):
     #print('[DEBUG]amount = {}'.format(amount))
@@ -80,6 +82,8 @@ elif my_stat < opponent_stat:
 else:
     print('Draw!')
 
+ if input("Repeat the program? (Y/N)").strip().upper() != 'Y':
+        break
 
 # def play_game():
 #     my_wins = 0
